@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Web-Lab</title>
+<style> 
+#RedSquare{
+width: 100px;
+  height: 100px;
+  position: absolute;
+  background: red;
+<img src="WebLabImg.jpg" width="100px">
+}
+
+#OU74 {
+  border: 1px solid gray;
+  width: 400px;
+  height: 300px;
+  position: relative;
+}
+#OU74>img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+</style>
+  </head>
+  <body>
+  <div id="OU74">
+<img src="WebLabImg.jpg">
+</div>
+<script type="application/javascript">
+var elemLeft, elemTop, maxElemLeft, maxElemTop, elem;
+
+elem = document.getElementById('OU74');
+
+maxElemLeft = document.documentElement.clientWidth - elem.offsetWidth;
+maxElemTop = document.documentElement.clientHeight - elem.offsetHeight;
+
+elem.onmousemove = handler;
+
+function handler() {
+  elemLeft = Math.random() * maxElemLeft;
+  elem.style.left = elemLeft + 'px';
+  elemTop = Math.random() * maxElemTop;
+  elem.style.top = elemTop + 'px';
+  
+}
+</script>
+
+  </body>
+</html>
